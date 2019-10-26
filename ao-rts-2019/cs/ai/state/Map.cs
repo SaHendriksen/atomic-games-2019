@@ -116,6 +116,11 @@ namespace ai
             return Tiles.Values.Where(t => t.HasResource).ToList();
         }
 
+        public List<Tile> AllWallTiles()
+        {
+            return Tiles.Values.Where(t => !t.Walkable).ToList();
+        }
+
         public (int X, int Y) HomeBaseLocation
         {
             get { return (0, 0); }

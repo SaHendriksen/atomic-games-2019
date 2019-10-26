@@ -63,7 +63,7 @@ namespace ai
             var serialized = Serializer.SerializeAICommandsMessage(message);
             if (commandsToSend.Count() > 0)
             {
-                // Console.WriteLine("Writing commands to server: " + serialized);
+                Console.WriteLine("Writing commands to server: " + serialized);
             }
             Writer.Write(serialized);
             Writer.Flush();
