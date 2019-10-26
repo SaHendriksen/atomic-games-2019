@@ -59,6 +59,8 @@ namespace ai
         bool IsResourceAdjacentTo((int X, int Y) location);
         MapDirections.Direction DirectionToAdjacentResource((int X, int Y) location);
         List<(int X, int Y)> EnemyLocationsInRange((int X, int Y) start, int range = 1);
+
+        List<Tile> AllWallTiles();
     }
 
     public interface IUnitStrategy

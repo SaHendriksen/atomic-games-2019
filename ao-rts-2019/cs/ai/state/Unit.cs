@@ -23,6 +23,7 @@ namespace ai
         public int ResourcesAvailable { get => UnitUpdate.Resource; }
         public bool CanAttack { get => UnitUpdate.CanAttack; }
         public bool IsAlive { get => UnitUpdate.IsAlive; }
+        public string Direction { get; set; }
 
         public virtual AICommand BuildCommand()
         {
