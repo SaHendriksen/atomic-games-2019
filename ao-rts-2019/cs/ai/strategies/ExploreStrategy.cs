@@ -12,12 +12,17 @@ namespace ai
         public ExploreStrategy(IMap map, Unit unit, UnitManager unitManager)
         {
             Map = map;
+
             UnitManager = unitManager;
         }
 
         public AICommand BuildCommand(Unit unit)
         {
+            // Console.WriteLine(unit.Id);
+            // Console.WriteLine(unit.IsBase);
+            // Console.WriteLine(unit.Location);
             var direction = AICommand.SerializeDirection(MapDirections.RandomDirection());
+
             return new AICommand { Command = AICommand.Move, Unit = unit.Id, Dir = direction };
         }
     }

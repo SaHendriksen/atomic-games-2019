@@ -14,6 +14,11 @@ namespace ai
 
         private IUnitStrategy BuildStrategy(IMap map, Unit unit, UnitManager unitManager)
         {
+            if (unit.IsBase) {
+                Console.WriteLine(unit.ResourcesAvailable);
+                return BuildBaseStrategy(map, unit, unitManager);
+            }
+
             if (unit.IsMobile)
             {
                 return BuildExploreStrategy(map, unit, unitManager);
@@ -24,6 +29,11 @@ namespace ai
         private ExploreStrategy BuildExploreStrategy(IMap map, Unit unit, UnitManager unitManager)
         {
             return new ExploreStrategy(map, unit, unitManager);
+        }
+
+        private BaseStrategy BuildBaseStrategy(IMap map, Unit unit, UnitManager unitManager)
+        {
+            return new BaseStrategy(map, unit, unitManager);
         }
     }
 }

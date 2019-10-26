@@ -1,3 +1,5 @@
+using System;
+
 namespace ai
 {
     public class AILoop : IAILoop
@@ -19,6 +21,7 @@ namespace ai
             while ((update = ServerConnection.ReadUpdate()) != null)
             {
                 StateManager.HandleGameUpdate(update);
+
                 ServerConnection.SendCommands(AIStrategy.BuildCommandList());
             }
         }
