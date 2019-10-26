@@ -49,7 +49,7 @@ namespace ai
 
         private ScoutStrategy BuildScoutStrategy(IMap map, Unit unit, UnitManager unitManager)
         {
-            return new ScoutStrategy(map, unit, unitManager);
+            return new ScoutStrategy(map, unit, unitManager, true);
         }
     }
 }
